@@ -1,0 +1,16 @@
+<Schema name="New Schema1">
+  <Cube name="COMISS&#213;ES" visible="true" cache="true" enabled="true">
+    <Table name="ft_comissao" schema="public" alias="">
+    </Table>
+    <Dimension type="StandardDimension" visible="true" foreignKey="codigogerentes_sk" name="GERENTE">
+      <Hierarchy visible="true" hasAll="true" primaryKey="codigo_sk">
+        <Table name="dim_gerentes" schema="public" alias="">
+        </Table>
+        <Level name="NOME" visible="true" table="dim_gerentes" column="nome" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Measure name="COMISS&#195;O" column="vr_total" datatype="Numeric" aggregator="sum" visible="true">
+    </Measure>
+  </Cube>
+</Schema>
